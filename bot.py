@@ -1,31 +1,41 @@
-#Apache License 2.0
-#Copyright (c) 2022 @AniHorizon 
+"""
+Apache License 2.0
 
-# extra imports
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+"""
+
 import aiohttp, asyncio, warnings, pytz, datetime
 import logging
 import logging.config
 import glob, sys, importlib, pyromod
 from pathlib import Path
-from aiohttp import web  # Fixed import
 
-# pyrogram imports
 import pyrogram.utils
 from pyrogram import Client, __version__, errors
 from pyrogram.raw.all import layer
 
-# bots imports
 from config import Config
 from plugins.web_support import web_server
-from plugins.file_rename import app as rename_app  # Renamed to avoid conflict
+from plugins.file_rename import app
 
 pyrogram.utils.MIN_CHANNEL_ID = -1009999999999
 
-# Get logging configurations
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[logging.FileHandler('BotLog.txt'),
-              logging.StreamHandler()]
+    handlers=[logging.FileHandler('BotLog.txt'), logging.StreamHandler()]
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
@@ -44,68 +54,70 @@ class DigitalRenameBot(Client):
         await super().start()
         me = await self.get_me()
         self.mention = me.mention
-        self.username = me.username
+        self.username = me.username  
         self.uptime = Config.BOT_UPTIME
         self.premium = Config.PREMIUM_MODE
         self.uploadlimit = Config.UPLOAD_LIMIT_MODE
-
-        app_runner = web.AppRunner(await web_server())  # Fixed
+        
+        app_runner = aiohttp.web.AppRunner(await web_server())
         await app_runner.setup()
-        await web.TCPSite(app_runner, "0.0.0.0", Config.PORT).start()
-
+        bind_address = "0.0.0.0"
+        await aiohttp.web.TCPSite(app_runner, bind_address, Config.PORT).start()
+        
         path = "plugins/*.py"
         files = glob.glob(path)
         for name in files:
             with open(name) as a:
                 patt = Path(a.name)
-                plugin_name = patt.stem
+                plugin_name = patt.stem.replace(".py", "")
                 plugins_path = Path(f"plugins/{plugin_name}.py")
                 import_path = "plugins.{}".format(plugin_name)
                 spec = importlib.util.spec_from_file_location(import_path, plugins_path)
                 load = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(load)
-                sys.modules[import_path] = load  # Fixed
-                print("Digital Botz Imported " + plugin_name)
-
-        print(f"{me.first_name} Iꜱ Sᴛᴀʀᴛᴇᴅ.....✨️")
+                sys.modules["plugins" + plugin_name] = load
+                print("Imported " + plugin_name)
+                
+        print(f"{me.first_name} is started")
 
         for id in Config.ADMIN:
-            try:
-                if Config.STRING_SESSION:
-                    await self.send_message(id, f"𝟮𝗚𝗕+ ғɪʟᴇ sᴜᴘᴘᴏʀᴛ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ...\n**__{me.first_name}  Iꜱ Sᴛᴀʀᴛᴇᴅ.....✨️__**")
-                else:
-                    await self.send_message(id, f"𝟮𝗚𝗕- ғɪʟᴇ sᴜᴘᴘᴏʀᴛ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ...\n**__{me.first_name}  Iꜱ Sᴛᴀʀᴛᴇᴅ.....✨️__**")
-            except:
-                pass
-
+            if Config.STRING_SESSION:
+                try:
+                    await self.send_message(id, f"2GB+ file support enabled.\nNote: Telegram Premium string session is required.\n\n**__{me.first_name} is started__**")                                
+                except: pass
+            else:
+                try:
+                    await self.send_message(id, f"2GB- file support enabled.\n\n**__{me.first_name} is started__**")                                
+                except: pass
+                    
         if Config.LOG_CHANNEL:
             try:
                 curr = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
                 date = curr.strftime('%d %B, %Y')
                 time = curr.strftime('%I:%M:%S %p')
-                await self.send_message(Config.LOG_CHANNEL,
-                                        f"**__{me.mention} Iꜱ Rᴇsᴛᴀʀᴛᴇᴅ !!**\n\n📅 Dᴀᴛᴇ : `{date}`\n⏰ Tɪᴍᴇ : `{time}`\n🌐 Tɪᴍᴇᴢᴏɴᴇ : `Asia/Kolkata`\n\n🉐 Vᴇʀsɪᴏɴ : `v{__version__} (Layer {layer})`")
+                await self.send_message(Config.LOG_CHANNEL, f"**__{me.mention} restarted!__**\n\n📅 Date: `{date}`\n⏰ Time: `{time}`\n🌐 Timezone: `Asia/Kolkata`\n\n🉐 Version: `v{__version__} (Layer {layer})`")                                
             except:
-                print("Pʟᴇᴀꜱᴇ Mᴀᴋᴇ Tʜɪꜱ Iꜱ Aᴅᴍɪɴ Iɴ Yᴏᴜʀ Lᴏɢ Cʜᴀɴɴᴇʟ")
+                print("Please make this bot an admin in your log channel.")
 
     async def stop(self, *args):
         for id in Config.ADMIN:
-            try:
-                await self.send_message(id, f"**Bot Stopped....**")
-            except:
-                pass
-        print("Bot Stopped 🙄")
+            try: await self.send_message(id, "**Bot stopped.**")                                
+            except: pass
+        print("Bot stopped.")
         await super().stop()
 
 bot_instance = DigitalRenameBot()
 
 def main():
     async def start_services():
-        tasks = [bot_instance.start()]
         if Config.STRING_SESSION:
-            tasks.append(rename_app.start())  # Renamed app used
-        await asyncio.gather(*tasks)
-
+            await asyncio.gather(
+                app.start(),
+                bot_instance.start()
+            )
+        else:
+            await asyncio.gather(bot_instance.start())
+            
     loop = asyncio.get_event_loop()
     loop.run_until_complete(start_services())
     loop.run_forever()
@@ -115,7 +127,7 @@ if __name__ == "__main__":
     try:
         main()
     except errors.FloodWait as ft:
-        print(f"Flood Wait Occured, Sleeping For {ft}")
-        asyncio.run(asyncio.sleep(ft.value))
-        print("Now Ready For Deploying !")
+        print(f"Flood Wait occurred, sleeping for {ft}")
+        asyncio.sleep(ft.value)
+        print("Now ready to deploy!")
         main()
