@@ -127,7 +127,7 @@ async def cb_handler(client, query: CallbackQuery):
     data = query.data 
     if data == "start":
         start_button = [[        
-        InlineKeyboardButton('Uᴩᴅᴀ𝚃ᴇꜱ', url='https://t.me/AniHorizon),
+        InlineKeyboardButton('Uᴩᴅᴀ𝚃ᴇꜱ', url='https://t.me/AniHorizon'),
         InlineKeyboardButton('Sᴜᴩᴩᴏʀ𝚃', url='https://t.me/AniHorison_Bots_Discussion')
         ],[
         InlineKeyboardButton('Aʙᴏυᴛ', callback_data='about'),
