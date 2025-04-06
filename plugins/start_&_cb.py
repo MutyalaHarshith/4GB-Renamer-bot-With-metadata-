@@ -1,34 +1,3 @@
-# (c) @RknDeveloperr
-# Rkn Developer 
-# Don't Remove Credit 😔
-# Telegram Channel @RknDeveloper & @Rkn_Botz
-# Developer @RknDeveloperr
-# Special Thanks To @ReshamOwner
-# Update Channel @Digital_Botz & @DigitalBotz_Support
-"""
-Apache License 2.0
-Copyright (c) 2022 @Digital_Botz
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-Telegram Link : https://t.me/Digital_Botz 
-Repo Link : https://github.com/DigitalBotz/Digital-Rename-Bot
-License Link : https://github.com/DigitalBotz/Digital-Rename-Bot/blob/main/LICENSE
-"""
-
 # extra imports
 import random, asyncio, datetime, pytz, time, psutil, shutil
 
@@ -43,13 +12,13 @@ from helper.utils import humanbytes
 from plugins import __version__ as _bot_version_, __developer__, __database__, __library__, __language__, __programer__
 
 upgrade_button = InlineKeyboardMarkup([[        
-        InlineKeyboardButton('buy premium ✓', user_id=int(6705898491)),
+        InlineKeyboardButton('buy premium ✓', user_id=int(6586630448)),
          ],[
         InlineKeyboardButton("Bᴀᴄᴋ", callback_data = "start")
 ]])
 
 upgrade_trial_button = InlineKeyboardMarkup([[        
-        InlineKeyboardButton('buy premium ✓', user_id=int(6705898491)),
+        InlineKeyboardButton('buy premium ✓', user_id=int(6586630448)),
          ],[
         InlineKeyboardButton("ᴛʀɪᴀʟ - 𝟷𝟸 ʜᴏᴜʀs ✓", callback_data = "give_trial"),
         InlineKeyboardButton("Bᴀᴄᴋ", callback_data = "start")
@@ -60,8 +29,8 @@ upgrade_trial_button = InlineKeyboardMarkup([[
 @Client.on_message(filters.private & filters.command("start"))
 async def start(client, message):
     start_button = [[        
-        InlineKeyboardButton('Uᴩᴅᴀ𝚃ᴇꜱ', url='https://t.me/Digital_Botz'),
-        InlineKeyboardButton('Sᴜᴩᴩᴏʀ𝚃', url='https://t.me/DigitalBotz_Support')
+        InlineKeyboardButton('Uᴩᴅᴀ𝚃ᴇꜱ', url='https://t.me/AniHorizon),
+        InlineKeyboardButton('Sᴜᴩᴩᴏʀ𝚃', url='https://t.me/AniHorison_Bots_Discussion')
         ],[
         InlineKeyboardButton('Aʙᴏυᴛ', callback_data='about'),
         InlineKeyboardButton('Hᴇʟᴩ', callback_data='help')       
@@ -73,9 +42,9 @@ async def start(client, message):
     user = message.from_user
     await digital_botz.add_user(client, message) 
     if Config.RKN_PIC:
-        await message.reply_photo(Config.RKN_PIC, caption=rkn.START_TXT.format(user.mention), reply_markup=InlineKeyboardMarkup(start_button))    
+        await message.reply_photo(Config.RKN_PIC, caption=rkn.START_TXT.format(mention=user.mention), reply_markup=InlineKeyboardMarkup(start_button))    
     else:
-        await message.reply_text(text=rkn.START_TXT.format(user.mention), reply_markup=InlineKeyboardMarkup(start_button), disable_web_page_preview=True)
+        await message.reply_text(text=rkn.START_TXT.format(mention=user.mention), reply_markup=InlineKeyboardMarkup(start_button), disable_web_page_preview=True)
 
 
 @Client.on_message(filters.private & filters.command("myplan"))
@@ -121,7 +90,16 @@ async def myplan(client, message):
 
         else:
             m=await message.reply_sticker("CAACAgIAAxkBAAIBTGVjQbHuhOiboQsDm35brLGyLQ28AAJ-GgACglXYSXgCrotQHjibHgQ")
-            await message.reply_text(f"ʜᴇʏ {user},\n\nʏᴏᴜ ᴅᴏ ɴᴏᴛ ʜᴀᴠᴇ ᴀɴʏ ᴀᴄᴛɪᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴs, ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴛᴀᴋᴇ ᴘʀᴇᴍɪᴜᴍ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ 👇",
+            await message.reply_text = f"""
+<b>ʜᴇʏ {user}</b>,
+
+<blockquote>
+ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴀɴʏ ᴀᴄᴛɪᴠᴇ <b>ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ</b> ᴀᴛ ᴛʜᴇ ᴍᴏᴍᴇɴᴛ.
+
+ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜɴʟᴏᴄᴋ <i>ᴜɴʟɪᴍɪᴛᴇᴅ ᴜᴘʟᴏᴀᴅꜱ</i> & ᴇxᴄʟᴜꜱɪᴠᴇ ꜰᴇᴀᴛᴜʀᴇꜱ,
+ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ᴜᴘɢʀᴀᴅᴇ ⬇️
+</blockquote>
+""",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💸 ᴄʜᴇᴄᴋᴏᴜᴛ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ 💸", callback_data='upgrade')]]))			 
             await asyncio.sleep(2)
             await m.delete()
@@ -132,10 +110,10 @@ async def plans(client, message):
         return # premium mode disabled ✓
 
     user = message.from_user
-    upgrade_msg = rkn.UPGRADE_PLAN.format(user.mention) if client.uploadlimit else rkn.UPGRADE_PREMIUM.format(user.mention)
+    upgrade_msg = rkn.UPGRADE_PLAN.format(mention=user.mention) if client.uploadlimit else rkn.UPGRADE_PREMIUM.format(mention=user.mention)
     
     free_trial_status = await digital_botz.get_free_trial_status(user.id)
-    if not await digital_botz.has_premium_access(user.id):
+    if not await AniHorizon.has_premium_access(user.id):
         if not free_trial_status:
             await message.reply_text(text=upgrade_msg, reply_markup=upgrade_trial_button, disable_web_page_preview=True)
         else:
@@ -149,8 +127,8 @@ async def cb_handler(client, query: CallbackQuery):
     data = query.data 
     if data == "start":
         start_button = [[        
-        InlineKeyboardButton('Uᴩᴅᴀ𝚃ᴇꜱ', url='https://t.me/Digital_Botz'),
-        InlineKeyboardButton('Sᴜᴩᴩᴏʀ𝚃', url='https://t.me/DigitalBotz_Support')
+        InlineKeyboardButton('Uᴩᴅᴀ𝚃ᴇꜱ', url='https://t.me/AniHorizon),
+        InlineKeyboardButton('Sᴜᴩᴩᴏʀ𝚃', url='https://t.me/AniHorison_Bots_Discussion')
         ],[
         InlineKeyboardButton('Aʙᴏυᴛ', callback_data='about'),
         InlineKeyboardButton('Hᴇʟᴩ', callback_data='help')       
@@ -221,12 +199,29 @@ async def cb_handler(client, query: CallbackQuery):
             return await query.message.delete()
                 
         await query.message.delete()
-        free_trial_status = await digital_botz.get_free_trial_status(query.from_user.id)
+        free_trial_status = await AniHorizon.get_free_trial_status(query.from_user.id)
         if not free_trial_status:            
-            await digital_botz.give_free_trail(query.from_user.id)
-            new_text = "**ʏᴏᴜʀ ᴘʀᴇᴍɪᴜᴍ ᴛʀɪᴀʟ ʜᴀs ʙᴇᴇɴ ᴀᴅᴅᴇᴅ ғᴏʀ 𝟷𝟸 ʜᴏᴜʀs.\n\nʏᴏᴜ ᴄᴀɴ ᴜsᴇ ꜰʀᴇᴇ ᴛʀᴀɪʟ ꜰᴏʀ 𝟷𝟸 ʜᴏᴜʀs ꜰʀᴏᴍ ɴᴏᴡ 😀\n\nआप अब से 𝟷𝟸 घण्टा के लिए निःशुल्क ट्रायल का उपयोग कर सकते हैं 😀**"
+            await AniHorizon.give_free_trail(query.from_user.id)
+            new_text = """
+<b>✅ ᴛʀɪᴀʟ ᴀᴄᴛɪᴠᴀᴛᴇᴅ ꜰᴏʀ 𝟷𝟸 ʜᴏᴜʀꜱ</b>
+
+<blockquote>
+ʏᴏᴜ ɴᴏᴡ ʜᴀᴠᴇ ᴀᴄᴄᴇꜱꜱ ᴛᴏ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ ꜰᴏʀ <b>𝟷𝟸 ʜᴏᴜʀꜱ</b> ᴀs ᴀ ꜰʀᴇᴇ ᴛʀɪᴀʟ!
+
+ᴇɴᴊᴏʏ ᴛʜᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ — sᴛᴀʀᴛ ᴜᴘʟᴏᴀᴅɪɴɢ ʙɪɢ ɴᴏᴡ!
+</blockquote>
+
+<b>ʜᴀᴠᴇ ꜰᴜɴ 😀</b>
+"""
         else:
-            new_text = "**🤣 ʏᴏᴜ ᴀʟʀᴇᴀᴅʏ ᴜsᴇᴅ ғʀᴇᴇ ɴᴏᴡ ɴᴏ ᴍᴏʀᴇ ғʀᴇᴇ ᴛʀᴀɪʟ. ᴘʟᴇᴀsᴇ ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʜᴇʀᴇ ᴀʀᴇ ᴏᴜʀ 👉 /plans**"
+            new_text = """
+<b>🤣 ɴᴏ ᴍᴏʀᴇ ꜰʀᴇᴇ ᴛʀɪᴀʟ ꜰᴏʀ ʏᴏᴜ!</b>
+
+<blockquote>
+ʏᴏᴜ’ᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴜsᴇᴅ ʏᴏᴜʀ ꜰʀᴇᴇ ᴛʀɪᴀʟ. ᴛɪᴍᴇ ᴛᴏ ᴜᴘɢʀᴀᴅᴇ ᴀɴᴅ ᴇɴᴊᴏʏ ᴜɴʟɪᴍɪᴛᴇᴅ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ!
+</blockquote>
+
+<b>📌 ᴄʜᴇᴄᴋ ᴏᴜʀ ᴘʟᴀɴꜱ ʜᴇʀᴇ 👉 /plans</b>"""
         await client.send_message(query.from_user.id, text=new_text)
 
     elif data == "thumbnail":
@@ -297,7 +292,7 @@ async def cb_handler(client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup([[
                 #⚠️ don't change source code & source link ⚠️ #
            #Whoever is deploying this repo is given a warning ⚠️ not to remove this repo link #first & last warning ⚠️   
-                InlineKeyboardButton("💞 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ 💞", url="https://github.com/DigitalBotz/Digital-Rename-Bot")
+                InlineKeyboardButton("💞 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ 💞", url="https://github.com/MythicMosaic/4GB-Renamer-bot-With-metadata-")
             ],[
                 InlineKeyboardButton("🔒 Cʟᴏꜱᴇ", callback_data = "close"),
                 InlineKeyboardButton("◀️ Bᴀᴄᴋ", callback_data = "start")
@@ -312,9 +307,3 @@ async def cb_handler(client, query: CallbackQuery):
             await query.message.delete()
             await query.message.continue_propagation()
 
-# (c) @RknDeveloperr
-# Rkn Developer 
-# Don't Remove Credit 😔
-# Telegram Channel @RknDeveloper & @Rkn_Botz
-# Developer @RknDeveloperr
-# Update Channel @Digital_Botz & @DigitalBotz_Support
