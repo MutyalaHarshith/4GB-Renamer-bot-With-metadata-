@@ -41,7 +41,8 @@ except:
 PORT = int(os.environ.get("PORT", "8080"))  
 BOT_UPTIME = time.time()
 
-class rkn(object): # Part of text configuration START_TXT = """<b><blockquote>ʜᴇʏ !! {mention}
+class rkn(object): # Part of text configuration 
+    START_TXT = """<b><blockquote>ʜᴇʏ !! {mention}
 
 ɪ ᴀᴍ ᴀ ᴘᴏᴡᴇʀғᴜʟ ғɪʟᴇ ʀᴇɴᴀᴍᴇʀ ʙᴏᴛ~ ɪ ᴄᴀɴ ʀᴇɴᴀᴍᴇ ᴀɴʏ ᴠɪᴅᴇᴏs, ᴍᴏᴠɪᴇs, ᴀɴɪᴍᴇs, ᴏʀ ᴀɴʏ ғɪʟᴇs ʏᴏᴜ sᴇɴᴅ~
 
@@ -61,12 +62,12 @@ Owner     : <a href='https://t.me/Momo_Ayase_bot'>This Person</a> Library   : <a
 
 UPGRADE_PREMIUM = """
 
-•⪼ ★Plans - ⏳Date - 💸Price 
-•⪼ 🥉Bronze - 3 days - 39 
-•⪼ 🥈Silver - 7 days - 59 
-•⪼ 🥇Gold - 15 days - 99 
-•⪼ 🏆Platinum - 1 month - 179 
-•⪼ 💎Diamond - 2 months - 339
+⪼ ★Plans - ⏳Date - 💸Price 
+⪼ 🥉Bronze - 3 days - 39 
+⪼ 🥈Silver - 7 days - 59 
+⪼ 🥇Gold - 15 days - 99 
+⪼ 🏆Platinum - 1 month - 179 
+⪼ 💎Diamond - 2 months - 339
 
 Daily Upload Limit: Unlimited Discount on All Plans: Rs.9 """
 
