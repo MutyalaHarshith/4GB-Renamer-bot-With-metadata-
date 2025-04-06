@@ -90,7 +90,7 @@ async def myplan(client, message):
 
         else:
             m=await message.reply_sticker("CAACAgIAAxkBAAIBTGVjQbHuhOiboQsDm35brLGyLQ28AAJ-GgACglXYSXgCrotQHjibHgQ")
-            await message.reply_text = f"""
+            await message.reply_text(f"""
 <b>ʜᴇʏ {user}</b>,
 
 <blockquote>
@@ -99,7 +99,7 @@ async def myplan(client, message):
 ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜɴʟᴏᴄᴋ <i>ᴜɴʟɪᴍɪᴛᴇᴅ ᴜᴘʟᴏᴀᴅꜱ</i> & ᴇxᴄʟᴜꜱɪᴠᴇ ꜰᴇᴀᴛᴜʀᴇꜱ,
 ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ᴜᴘɢʀᴀᴅᴇ ⬇️
 </blockquote>
-""",
+"""),
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💸 ᴄʜᴇᴄᴋᴏᴜᴛ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ 💸", callback_data='upgrade')]])			 
             await asyncio.sleep(2)
             await m.delete()
