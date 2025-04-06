@@ -138,7 +138,7 @@ async def cb_handler(client, query: CallbackQuery):
             start_button.append([InlineKeyboardButton('💸 ᴜᴘɢʀᴀᴅᴇ ᴛᴏ ᴘʀᴇᴍɪᴜᴍ 💸', callback_data='upgrade')])
             
         await query.message.edit_text(
-            text=rkn.START_TXT.format(query.from_user.mention),
+            text=rkn.START_TXT.format(from_user.mention),
             disable_web_page_preview=True,
             reply_markup = InlineKeyboardMarkup(start_button))
         
