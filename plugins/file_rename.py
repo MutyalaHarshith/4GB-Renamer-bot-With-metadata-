@@ -112,7 +112,7 @@ async def refunc(client, message):
 
         # Continue your renaming logic here...
     # your logic here
-                if not "." in new_name:
+        if not "." in new_name:
     if media.file_name and "." in media.file_name:
         extn = media.file_name.rsplit('.', 1)[-1]
     else:
