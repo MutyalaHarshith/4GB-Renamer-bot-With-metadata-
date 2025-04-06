@@ -137,7 +137,7 @@ Example: /set_caption 📕 File Name: {filename}   💾 Size: {filesize}   ⏰ D
 
 📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @Momo_Ayase_bot"""
 
-    RNK_PROGRESS = """<b>
+    RKN_PROGRESS = """<b>
 ╭━━━━❰Ani PROCESSING...❱━➣
 ┣⪼ 🗃️ ꜱɪᴢᴇ: {1} | {2}
 ┣⪼ ⏳️ ᴅᴏɴᴇ : {0}%
