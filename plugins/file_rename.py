@@ -99,6 +99,8 @@ async def refunc(client, message):
         msg = await client.get_messages(message.chat.id, reply_message.id)
         file = msg.reply_to_message
         media = getattr(file, file.media.value)
+except AttributeError:
+    return await message.reply_text("Please send a valid media file (like video, document, or audio) to rename.")
         if not "." in new_name:
             if media.file_name and "." in media.file_name:
     # your logic here
