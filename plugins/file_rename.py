@@ -97,7 +97,7 @@ async def refunc(client, message):
         new_name = message.text 
         await message.delete() 
         msg = await client.get_messages(message.chat.id, reply_message.id)
- try:
+        try:
             media = getattr(msg, msg.media.value)
         except AttributeError:
             return await message.reply("Unsupported media type.")
