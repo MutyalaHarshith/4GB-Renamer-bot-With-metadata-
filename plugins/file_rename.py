@@ -94,27 +94,20 @@ async def rename_start(client, message):
 async def refunc(client, message):
     reply_message = message.reply_to_message
     if (reply_message.reply_markup) and isinstance(reply_message.reply_markup, ForceReply):
-        new_name = message.text 
-        await message.delete() 
+        new_name = message.text
+        await message.delete()
         msg = await client.get_messages(message.chat.id, reply_message.id)
+        
         try:
             media = getattr(msg, msg.media.value)
         except AttributeError:
             return await message.reply("Unsupported media type.")
-
-        if not "." in new_name:
-            if media.file_name and "." in media.file_name:
-                extn = media.file_name.rsplit('.', 1)[-1]
-            else:
-                extn = "mkv"
-            new_name = new_name + "." + extn
-
-        # now call your rename logic
-        from plugins.functions.rename import rename_media
-        await rename_media(client, msg, new_name)
-            else:
-                return await message.reply("File extension not found. Please add a proper extension.")
-
+        
+        if '.' in new_name:
+            from plugins.functions.rename import rename_media
+            await rename_media(client, msg, new_name)
+        else:
+            return await message.reply("File extension not found. Please add a proper extension.")
         # Continue your renaming logic here...
     # your logic here
         if not "." in new_name:
