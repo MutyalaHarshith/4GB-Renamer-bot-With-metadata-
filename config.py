@@ -165,7 +165,7 @@ you can pre-add a prefix and suffix along with your new filename
 Exᴀᴍᴩʟᴇ:- `/set_suffix @AniHorizon `
 Exᴀᴍᴩʟᴇ:- `/set_prefix @AniHorizon `
 """
-» 𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘 : <a href=https://github.com/MythicMosaic/4GB-Renamer-bot-With-metadata-/tree/main</a>
+𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘 : <a href=https://github.com/MythicMosaic/4GB-Renamer-bot-With-metadata-/tree/main</a>
 
 • ❣️ <a href=https://github.com/MythicMosaic>MythicMosaic</a>
 • ❣️ <a href=https://github.com/MythicMosaic>AniHorizon</a>
