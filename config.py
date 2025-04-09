@@ -122,26 +122,74 @@ Example: /set_caption 📕 File Name: {filename}   💾 Size: {filesize}   ⏰ D
 ⊙ Downloads: {}"""
 
     LIVE_STATUS = """
-[Live status message here — Add your content accordingly]"""
+⚡ ʟɪᴠᴇ sᴇʀᴠᴇʀ sᴛᴀᴛᴜs ⚡
+
+ᴜᴘᴛɪᴍᴇ: `{}`
+ᴄᴘᴜ: `{}%`
+ʀᴀᴍ: `{}%` 
+ᴛᴏᴛᴀʟ ᴅɪsᴋ: `{}`
+ᴜsᴇᴅ sᴘᴀᴄᴇ: `{} {}%`
+ғʀᴇᴇ sᴘᴀᴄᴇ: `{}`
+ᴜᴘʟᴏᴀᴅ: `{}`
+ᴅᴏᴡɴʟᴏᴀᴅ: `{}`
+V𝟹.𝟶.𝟶 [STABLE]
+"""
+    AniHorizon_METADATA = """
+❪ SET CUSTOM METADATA ❫
+
+- /metadata - Tᴏ Sᴇᴛ & Cʜᴀɴɢᴇ ʏᴏᴜʀ ᴍᴇᴛᴀᴅᴀᴛᴀ ᴄᴏᴅᴇ
+
+☞ Fᴏʀ Exᴀᴍᴘʟᴇ:-
+
+`--change-title @AniHorizon 
+--change-video-title @AniHorizon 
+--change-audio-title @AniHorizon 
+--change-subtitle-title @AniHorizon 
+--change-author @AniHorizon `
+
+📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @Momo_Ayase_bot
+"""
+    
+    CUSTOM_FILE_NAME = """
+<u>🖋️ Custom File Name</u>
+
+you can pre-add a prefix and suffix along with your new filename
+
+➢ /set_prefix - To add a prefix along with your _filename.
+➢ /see_prefix - Tᴏ Sᴇᴇ Yᴏᴜʀ Pʀᴇғɪx !!
+➢ /del_prefix - Tᴏ Dᴇʟᴇᴛᴇ Yᴏᴜʀ Pʀᴇғɪx !!
+➢ /set_suffix - To add a suffix along with your filename_.
+➢ /see_suffix - Tᴏ Sᴇᴇ Yᴏᴜʀ Sᴜғғɪx !!
+➢ /del_suffix - Tᴏ Dᴇʟᴇᴛᴇ Yᴏᴜʀ Sᴜғғɪx !!
+
+Exᴀᴍᴩʟᴇ:- `/set_suffix @AniHorizon `
+Exᴀᴍᴩʟᴇ:- `/set_prefix @AniHorizon `
+"""
+» 𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘 : <a href=https://github.com/MythicMosaic/4GB-Renamer-bot-With-metadata-/tree/main</a>
+
+• ❣️ <a href=https://github.com/MythicMosaic>MythicMosaic</a>
+• ❣️ <a href=https://github.com/MythicMosaic>AniHorizon</a>
+• ❣️ <a href=https://github.com/a2-b3c4d>Stryker</a> """
+    # ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 
     SEND_METADATA = """
 ❪ SET CUSTOM METADATA ❫
 
 ☞ Fᴏʀ Exᴀᴍᴘʟᴇ:-
 
---change-title @AniHorizon
---change-video-title @AniHorizon
---change-audio-title @AniHorizon
---change-subtitle-title @AniHorizon
---change-author @AniHorizon
+`--change-title @AniHorizon 
+--change-video-title @AniHorizon 
+--change-audio-title @AniHorizon 
+--change-subtitle-title @AniHorizon 
+--change-author @AniHorizon `
 
-📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @Momo_Ayase_bot"""
-
-    RKN_PROGRESS = """<b>
+📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @Momo_Ayase_bot 
+"""
+    
+    Ani_PROGRESS = """<b>\n
 ╭━━━━❰Ani PROCESSING...❱━➣
 ┣⪼ 🗃️ ꜱɪᴢᴇ: {1} | {2}
 ┣⪼ ⏳️ ᴅᴏɴᴇ : {0}%
 ┣⪼ 🚀 ꜱᴩᴇᴇᴅ: {3}/s
 ┣⪼ ⏰️ ᴇᴛᴀ: {4}
-╰━━━━━━━━━━━━━━━➣
-</b>"""
+╰━━━━━━━━━━━━━━━➣ </b>"""
