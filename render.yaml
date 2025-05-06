@@ -5,7 +5,7 @@ services:
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python3 bot.py
-    repo: https://github.com/MythicMosaic/4GB-Renamer-bot-With-metadata-/tree/main.git
+    repo: https://github.com/MutyalaHarshith/4GB-Renamer-bot-With-metadata-.git
     branch: main
     autoDeploy: false
     envVars:
